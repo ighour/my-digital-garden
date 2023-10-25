@@ -10,7 +10,9 @@ Ou se preferir, veja algumas [reflexões](./reflexoes/index.md) que já plantei 
 
 Aqui vão as últimas sementes que plantei no meu jardim digital:
 
-- [A biblioteca viva](./reflexoes/da-vida/2023-10-26-a-biblioteca-viva/content.md)
+- [Até onde vamos?](./reflexoes/da-vida/2023-10-25-ate-onde-vamos/content.md)
+
+- [A biblioteca viva](./reflexoes/da-vida/2023-10-25-a-biblioteca-viva/content.md)
 
 - [Como estou enfrentando meu monstro hoje? (parte 2)](./reflexoes/da-vida/2023-10-25-como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md)
 
