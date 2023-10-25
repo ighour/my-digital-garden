@@ -1,8 +1,7 @@
-# My Digital Garden
+# My Digital Garden (English)
 
-Seeding part of my thoughts, ideas, projects and reflections in a cozy place and at a slow pace.
+You can simply view the garden from my markdown files [here](./content/en/index.md), or for a website experience instead, visit [here](#) (soon).
 
-## My Seeds
+# Meu Jardim Digital (Portuguese)
 
-### Pinned
-- [Começando pelo final](./content/2023-10-23-comecando-pelo-final.md)
+Você pode simplesmente ver o meu jardim a partir dos meus arquivos _markdown_ [aqui](./content/pt/index.md), ou para uma experiência estilo _website_, visite [aqui](#) (em breve).
