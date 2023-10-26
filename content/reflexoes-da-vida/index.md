@@ -1,8 +1,12 @@
 # Reflexões da Vida
 
+---
+
 E o que é da vida senão uma grande, eterna e inacabada reflexão? Como diz aquele lema, é vivendo e aprendendo que a gente segue.
 
-## Sementes Plantadas
+---
+
+### Sementes Plantadas
 
 - [Até onde vamos?](./2023-10-25-ate-onde-vamos/content.md)
 

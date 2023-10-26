@@ -1,5 +1,7 @@
 # Até onde vamos?
 
+---
+
 Reza a lenda que seres primitivos de carne e osso dominavam o mundo.
 
 Eles detinham certa complexidade racional e emocional, e a capacidade de se relacionarem em comunidades e grupos sociais.
@@ -11,7 +13,3 @@ A vida foi ficando cada vez mais automática e fácil. Tão simples que a própr
 Tudo se resumiu a apenas existir, até que nem isso era mais preciso.
 
 E assim, tudo mudou. (ou acabou?)
-
-### Rabiscando Denovo
-
-- Essa semente foi originalmente publicada no meu ko-fi em 27 de abril de 2023, mas aí decidi plantar ela aqui também.

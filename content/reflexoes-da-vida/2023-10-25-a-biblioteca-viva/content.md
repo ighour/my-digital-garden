@@ -1,12 +1,14 @@
 # A biblioteca viva
 
+---
+
 ![Livro](./livro.jpeg)
 
 Era uma vez uma biblioteca comum, cuidada por um bibliotecário tão comum quanto a mesma. No entanto, ambos estavam repletos de vida. 
 
 Todos os dias o bibliotecário tinha de organizar dezenas de livros, em um trabalho muito repetitivo, mas nunca deixou de se surpreender com a perfeição de suas capas.
 
-– Esse título não poderia ser melhor! E essa ilustração, impecável! – sempre dizia o bibliotecário.
+Esse título não poderia ser melhor! E essa ilustração, impecável! – sempre dizia o bibliotecário.
 
 No entanto, nunca teve coragem de abrir ao menos um deles. Era como se fosse o suficiente apenas conhecer as capas dos livros.
 
@@ -32,10 +34,8 @@ Sua vida mudou desde então. Hoje, sempre que se sente sozinho e imperfeito, ele
 
 Decidiu até escrever o seu próprio livro e colocá-lo na biblioteca, para que outros leitores pudessem lê-lo e nunca mais se sentir desconectados com a vida, como ele estava.
 
-### Olhando por aí
+---
+
+### Caminhando por aí
 
 Essas palavras foram inspiradas no projeto [Human Library (Biblioteca Humana)](https://humanlibrary.org/), uma iniciativa que publica pessoas como livros abertos, para reconstruir nossos julgamentos sobre os outros.
-
-### Rabiscando Denovo
-
-Essa semente foi originalmente publicada no meu ko-fi em 18 de abril de 2023, mas aí decidi plantar ela aqui também.

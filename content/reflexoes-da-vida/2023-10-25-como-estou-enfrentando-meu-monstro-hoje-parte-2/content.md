@@ -1,10 +1,10 @@
 # Como estou enfrentando meu monstro hoje? (parte 2)
 
-----------
+---
 
-Essa reflexão é uma ramificação de [Qual é o monstro que estou enfrentando hoje? (parte 1)](../2023-10-25-qual-e-o-monstro-que-estou-enfrentando-hoje-parte-1/content.md).
+> Essa reflexão é uma ramificação de [Qual é o monstro que estou enfrentando hoje? (parte 1)](../2023-10-25-qual-e-o-monstro-que-estou-enfrentando-hoje-parte-1/content.md).
 
-----------
+---
 
 ![Monstro](./monster.jpeg)
 
@@ -36,8 +36,8 @@ E, pessoalmente, eu tenho escolhido viver mais próximo da natureza, mais devaga
 
 Essas são as minhas escolhas e, provavelmente, não serão as suas. Então me conta, o que tem lhe ajudado a enfrentar o seu monstro?
 
-### Rabiscando Denovo
+---
 
-- Essa semente foi originalmente publicada no meu ko-fi em 18 de abril de 2023, mas aí decidi plantar ela aqui também.
+### Um pouco mais
 
-- Uma nota muito especial: eu realmente acredito em uma vida mais minimalista, inspirada na Lei de Paretto: se você descobrir os 20% mais significativos da sua vida, você terá encontrado pelo menos 80% do que você precisa.
+Eu realmente acredito em uma vida mais minimalista, inspirada na Lei de Paretto: se você descobrir os 20% mais significativos da sua vida, você terá encontrado pelo menos 80% do que você precisa.

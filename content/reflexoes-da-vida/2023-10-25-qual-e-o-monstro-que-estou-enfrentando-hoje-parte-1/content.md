@@ -1,5 +1,7 @@
 # Qual é o monstro que estou enfrentando hoje? (parte 1)
 
+---
+
 ![Monstro](./monster.jpeg)
 
 Que todos temos monstros a enfrentar ao longo da vida, já sabemos. Mas qual estou enfrentando hoje?
@@ -28,12 +30,6 @@ Acho que o meu monstro da vez pode ser chamado de "lado preocupante e negativo d
 
 E você, qual é o monstro que está enfrentando hoje?
 
-----------
+---
 
-Essa reflexão ramifica para [Como estou enfrentando meu monstro hoje? (parte 2)](../2023-10-25-como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md).
-
-----------
-
-### Rabiscando Denovo
-
-Essa semente foi originalmente publicada no meu ko-fi em 14 de abril de 2023, mas aí decidi plantar ela aqui também.
+> Essa reflexão ramifica para [Como estou enfrentando meu monstro hoje? (parte 2)](../2023-10-25-como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md).

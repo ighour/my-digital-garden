@@ -1,8 +1,10 @@
 # Começando pelo final
 
+---
+
 Às vezes me perco solucionando o final de minhas ideias logo no começo, e o resultado quase sempre é o mesmo: um projeto inacabado.
 
-Fiquei empolgado ao ler sobre Jardins Digitais e fui aprender qual seria a melhor forma de criar um aplicativo para o meu próprio jardim e fazer o _deploy_ sem muitos custos.
+Fiquei empolgado ao ler sobre Jardins Digitais e fui aprender qual seria a melhor forma de criar um aplicativo para o meu próprio jardim e fazer o _deploy_[^1] sem muitos custos.
 
 Comecei pelo final novamente, gastando horas afinco lendo sobre várias combinações de tecnologias e acabei ficando frustrado com o turbilhão de informações e opções que encontrei.
 
@@ -14,17 +16,18 @@ Assim plantei a minha primeira semente, nem pelo começo, nem pelo final, mas se
 
 Isso que importa. Todo o resto vou decidir com o tempo, quando for o momento certo.
 
-### Olhando por aí
+---
 
-(1) _Deploy_ é o processo de disponibilizar um aplicativo para o público e, por curiosidade, aqui vão algumas ferramentas que eu estava estudando:
+### Caminhando por aí
 
-- [Decap CMS](https://decapcms.org/)
-- [Contentrain](https://contentrain.io/)
-- [Tina CMS](https://tina.io/)
-
-(2) Exemplos legais de Jardins Digitais que conheci através do [Tira do Papel](https://tiradopapel.com):
+Exemplos legais de Jardins Digitais que conheci através do [Tira do Papel](https://tiradopapel.com):
 
 - [Maggie Delano](https://www.maggiedelano.com/garden/)
 - [My Brain](https://aengusmcmillin.com/brain/)
 - [Tom Critchlow](https://tomcritchlow.com/wiki/)
 - [Philipb](https://philipb.cc/)
+
+[^1]: _Deploy_ é o processo de disponibilizar um aplicativo para o público e, por curiosidade, aqui vão algumas ferramentas que eu estava avaliando:
+    - [Decap CMS](https://decapcms.org/)
+    - [Contentrain](https://contentrain.io/)
+    - [Tina CMS](https://tina.io/)
