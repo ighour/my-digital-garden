@@ -14,12 +14,12 @@ Descubra mais [sobre o meu jardim digital](./sobre-o-meu-jardim-digital/index.md
 
 Aqui vão as últimas sementes que plantei:
 
-- [Até onde vamos?](./reflexoes-da-vida/2023-10-25-ate-onde-vamos/content.md)
+- [Até onde vamos?](./2023-10-25-ate-onde-vamos/content.md)
 
-- [A biblioteca viva](./reflexoes-da-vida/2023-10-25-a-biblioteca-viva/content.md)
+- [A biblioteca viva](./2023-10-25-a-biblioteca-viva/content.md)
 
-- [Como estou enfrentando meu monstro hoje? (parte 2)](./reflexoes-da-vida/2023-10-25-como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md)
+- [Como estou enfrentando meu monstro hoje? (parte 2)](./reflexoes-da-vida/como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md)
 
-- [Qual é o monstro que estou enfrentando hoje? (parte 1)](./reflexoes-da-vida/2023-10-25-qual-e-o-monstro-que-estou-enfrentando-hoje-parte-1/content.md)
+- [Qual é o monstro que estou enfrentando hoje? (parte 1)](./reflexoes-da-vida/qual-e-o-monstro-que-estou-enfrentando-hoje-parte-1/content.md)
 
-- [Começando pelo final](./sobre-o-meu-jardim-digital/2023-10-23-comecando-pelo-final/content.md)
+- [Começando pelo final](./sobre-o-meu-jardim-digital/comecando-pelo-final/content.md)

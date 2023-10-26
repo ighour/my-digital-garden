@@ -2,7 +2,7 @@
 
 ---
 
-> Essa reflexão é uma ramificação de [Qual é o monstro que estou enfrentando hoje? (parte 1)](../2023-10-25-qual-e-o-monstro-que-estou-enfrentando-hoje-parte-1/content.md).
+> Essa reflexão é uma ramificação de [Qual é o monstro que estou enfrentando hoje? (parte 1)](../qual-e-o-monstro-que-estou-enfrentando-hoje-parte-1/content.md).
 
 ---
 

@@ -32,4 +32,4 @@ E você, qual é o monstro que está enfrentando hoje?
 
 ---
 
-> Essa reflexão ramifica para [Como estou enfrentando meu monstro hoje? (parte 2)](../2023-10-25-como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md).
+> Essa reflexão ramifica para [Como estou enfrentando meu monstro hoje? (parte 2)](../como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md).
