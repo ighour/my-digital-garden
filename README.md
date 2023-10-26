@@ -1,7 +1,9 @@
 # My Digital Garden (English)
 
-You can simply view the garden from my markdown files [here](./content/en/index.md), or for a website experience instead, visit [here](#) (soon).
+You can simply view the garden from my markdown files [here](./content/index.md), or for a website experience instead, visit [here](#) (soon).
+
+Currently, the garden is only cultivated with Portuguese seeds, but I intend to plant some English seeds soon.
 
 # Meu Jardim Digital (Portuguese)
 
-Você pode simplesmente ver o meu jardim a partir dos meus arquivos _markdown_ [aqui](./content/pt/index.md), ou para uma experiência estilo _website_, visite [aqui](#) (em breve).
+Você pode simplesmente ver o meu jardim a partir dos meus arquivos _markdown_ [aqui](./content/index.md), ou para uma experiência _web_, visite [aqui](#) (em breve).
