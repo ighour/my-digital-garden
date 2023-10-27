@@ -9,61 +9,22 @@ import {
 } from "./utils/files";
 import { CONTENT_MARKDOWN_FILENAME } from "../../constants";
 import { extractPropertiesFromMetaFile } from "./utils/parse";
-import { Category, Content, ContentType, LocalImage, Post } from "../../types";
+import { Category, ContentType, LocalImage, Post } from "../../types";
+import { mapToCategoryContent, mapToPostContent } from "./utils/mappers";
 
 const CONTENT_ROOT_PATH = getContentsRootPath();
 const TOOLS_DIST_PATH = getToolsDistPath();
 
-function craftPostContent(
-  rawContent: string,
-  metaProperties: Pick<Content, "created_at" | "language">,
-  contentFilePath: string,
-  images: LocalImage[],
-  parentPath: string
-): Post {
-  const post: Post = {
-    raw: rawContent,
-    name: "TODO",
-    created_at: metaProperties.created_at,
-    type: ContentType.POST,
-    language: metaProperties.language,
-    slug: "TODO",
-    path: path.relative(CONTENT_ROOT_PATH, contentFilePath),
-    images,
-    categoryPath: path.relative(CONTENT_ROOT_PATH, parentPath),
-  };
-  return post;
-}
-
-function craftCategoryContent(
-  rawContent: string,
-  metaProperties: Pick<Content, "created_at" | "language">,
-  currentPath: string,
-  images: LocalImage[],
-  subcategories: Category[],
-  posts: Post[],
-  parentPath: string | null
-): Category {
-  const category: Category = {
-    raw: rawContent,
-    name: "TODO",
-    created_at: metaProperties.created_at,
-    type: ContentType.CATEGORY,
-    language: metaProperties.language,
-    slug: "TODO",
-    path: path.relative(CONTENT_ROOT_PATH, currentPath),
-    images,
-    subcategories,
-    posts,
-    parentCategoryPath: parentPath ? path.relative(CONTENT_ROOT_PATH, parentPath) : null,
-  };
-  return category;
-}
-
+/**
+ * Recursively discovers all content from a path.
+ * @param currentPath current path to discover.
+ * @param parentPath parent path of current path.
+ * @returns A promise with typed post or category.
+ */
 async function recursivelyDiscoverContent(
   currentPath: string,
   parentPath: string | null = null
-) {
+): Promise<Post | Category> {
   const contentFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
 
   const [rawContent, metaProperties] = await Promise.all([
@@ -86,7 +47,7 @@ async function recursivelyDiscoverContent(
         `recursivelyDiscoverContent | Missing parent path for post ${contentFilePath}`
       );
     }
-    const post = craftPostContent(
+    const post = mapToPostContent(
       rawContent,
       metaProperties,
       contentFilePath,
@@ -109,7 +70,7 @@ async function recursivelyDiscoverContent(
     (child): child is Post => child.type === "post"
   );
 
-  const category = craftCategoryContent(
+  const category = mapToCategoryContent(
     rawContent,
     metaProperties,
     contentFilePath,
