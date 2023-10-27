@@ -1,7 +1,10 @@
-import { getRawFileContent } from "./files";
-import { Content, ContentType, Language } from "../../../types";
+import { getRawFileContent, listImages } from "./files";
+import { Content, ContentType, Language, LocalImage } from "../../../types";
 import path from "path";
-import { CONTENT_META_FILENAME } from "../../../constants";
+import {
+  CONTENT_MARKDOWN_FILENAME,
+  CONTENT_META_FILENAME,
+} from "../../../constants";
 
 /**
  * Get the content type as enum.
@@ -85,4 +88,27 @@ export async function extractPropertiesFromMetaFile(
   };
 
   return properties;
+}
+
+/**
+ * Extracts the markdown content from a markdown file.
+ * @param currentPath The path of the markdown file.
+ * @returns A promise with the markdown content.
+ */
+export async function extractMarkdownContent(
+  currentPath: string
+): Promise<Content["raw"]> {
+  const markdownFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
+  const raw = getRawFileContent(markdownFilePath);
+  return raw;
+}
+
+/**
+ * Extracts the images filenames from a directory.
+ * @param currentPath The path of the directory.
+ * @returns A promise with the images filenames.
+ */
+export async function extractImages(currentPath: string): Promise<string[]> {
+  const imageNames = await listImages(currentPath);
+  return imageNames;
 }

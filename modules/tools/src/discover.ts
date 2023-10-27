@@ -1,14 +1,16 @@
 import path from "path";
+import { getContentsRootPath, listDirectories } from "./utils/files";
 import {
-  getContentsRootPath,
-  getRawFileContent,
-  listDirectories,
-  listImages,
-} from "./utils/files";
-import { CONTENT_MARKDOWN_FILENAME } from "../../constants";
-import { extractPropertiesFromMetaFile } from "./utils/parse";
-import { Category, ContentType, LocalImage, Post } from "../../types";
-import { mapToCategoryContent, mapToPostContent } from "./utils/mappers";
+  extractImages,
+  extractMarkdownContent,
+  extractPropertiesFromMetaFile,
+} from "./utils/parse";
+import { Category, ContentType, Post } from "../../types";
+import {
+  mapToCategoryContent,
+  mapToLocalImage,
+  mapToPostContent,
+} from "./utils/mappers";
 
 const CONTENT_ROOT_PATH = getContentsRootPath();
 
@@ -22,32 +24,27 @@ async function recursivelyDiscoverContent(
   currentPath: string,
   parentPath: string | null = null
 ): Promise<Post | Category> {
-  const contentFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
-
-  const [rawContent, metaProperties] = await Promise.all([
-    getRawFileContent(contentFilePath),
+  const [markdownContent, metaProperties, imagesNames] = await Promise.all([
+    extractMarkdownContent(currentPath),
     extractPropertiesFromMetaFile(currentPath),
+    extractImages(currentPath),
   ]);
 
-  const imageNames = await listImages(currentPath);
-  const images: LocalImage[] = imageNames.map((imageName) => ({
-    name: imageName,
-    path: path.relative(CONTENT_ROOT_PATH, path.join(currentPath, imageName)),
-  }));
-
-  const contentType = metaProperties.type;
+  const images = imagesNames.map((imageName) =>
+    mapToLocalImage(imageName, currentPath)
+  );
 
   // It reached a final node for the recursion
-  if (contentType === ContentType.POST) {
+  if (metaProperties.type === ContentType.POST) {
     if (parentPath === null) {
       throw new Error(
-        `recursivelyDiscoverContent | Missing parent path for post ${contentFilePath}`
+        `recursivelyDiscoverContent | Missing parent path for post ${path}`
       );
     }
     const post = mapToPostContent(
-      rawContent,
+      markdownContent,
       metaProperties,
-      contentFilePath,
+      currentPath,
       images,
       parentPath
     );
@@ -68,9 +65,9 @@ async function recursivelyDiscoverContent(
   );
 
   const category = mapToCategoryContent(
-    rawContent,
+    markdownContent,
     metaProperties,
-    contentFilePath,
+    currentPath,
     images,
     subcategories,
     posts,

@@ -7,6 +7,7 @@ import {
   Post,
 } from "../../../types";
 import { getContentsRootPath } from "./files";
+import { CONTENT_MARKDOWN_FILENAME } from "../../../constants";
 
 const CONTENT_ROOT_PATH = getContentsRootPath();
 
@@ -14,7 +15,7 @@ const CONTENT_ROOT_PATH = getContentsRootPath();
  * Maps to a typed post content.
  * @param rawContent markdown content of post.
  * @param metaProperties meta properties of post.
- * @param contentFilePath relative path of post from content root path.
+ * @param currentPath relative path of post folder from content root path.
  * @param images list of images of post.
  * @param parentPath relative path of parent category from content root path.
  * @returns A typed post content.
@@ -22,10 +23,11 @@ const CONTENT_ROOT_PATH = getContentsRootPath();
 export function mapToPostContent(
   rawContent: string,
   metaProperties: Pick<Content, "created_at" | "language">,
-  contentFilePath: string,
+  currentPath: string,
   images: LocalImage[],
   parentPath: string
 ): Post {
+  const markdownFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
   const post: Post = {
     raw: rawContent,
     name: "TODO",
@@ -33,7 +35,7 @@ export function mapToPostContent(
     type: ContentType.POST,
     language: metaProperties.language,
     slug: "TODO",
-    path: path.relative(CONTENT_ROOT_PATH, contentFilePath),
+    path: path.relative(CONTENT_ROOT_PATH, markdownFilePath),
     images,
     categoryPath: path.relative(CONTENT_ROOT_PATH, parentPath),
   };
@@ -60,6 +62,7 @@ export function mapToCategoryContent(
   posts: Post[],
   parentPath: string | null
 ): Category {
+  const markdownFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
   const category: Category = {
     raw: rawContent,
     name: "TODO",
@@ -67,7 +70,7 @@ export function mapToCategoryContent(
     type: ContentType.CATEGORY,
     language: metaProperties.language,
     slug: "TODO",
-    path: path.relative(CONTENT_ROOT_PATH, currentPath),
+    path: path.relative(CONTENT_ROOT_PATH, markdownFilePath),
     images,
     subcategories,
     posts,
@@ -76,4 +79,17 @@ export function mapToCategoryContent(
       : null,
   };
   return category;
+}
+
+/**
+ * Maps to a typed local image.
+ * @param imageName image file name.
+ * @param currentPath current path of image.
+ * @returns A typed local image.
+ */
+export function mapToLocalImage(imageName: string, currentPath: string): LocalImage {
+  return {
+    name: imageName,
+    path: path.relative(CONTENT_ROOT_PATH, path.join(currentPath, imageName)),
+  }
 }
