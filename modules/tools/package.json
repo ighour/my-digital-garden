@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "discover": "ts-node src/discover.ts"
+    "discover": "ts-node scripts/discover.ts"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",

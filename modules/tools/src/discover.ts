@@ -2,10 +2,8 @@ import path from "path";
 import {
   getContentsRootPath,
   getRawFileContent,
-  getToolsDistPath,
   listDirectories,
   listImages,
-  saveFile,
 } from "./utils/files";
 import { CONTENT_MARKDOWN_FILENAME } from "../../constants";
 import { extractPropertiesFromMetaFile } from "./utils/parse";
@@ -13,7 +11,6 @@ import { Category, ContentType, LocalImage, Post } from "../../types";
 import { mapToCategoryContent, mapToPostContent } from "./utils/mappers";
 
 const CONTENT_ROOT_PATH = getContentsRootPath();
-const TOOLS_DIST_PATH = getToolsDistPath();
 
 /**
  * Recursively discovers all content from a path.
@@ -83,16 +80,11 @@ async function recursivelyDiscoverContent(
   return category;
 }
 
-async function main() {
-  console.log("Discover - Start...");
+/**
+ * Discovers all content from CONTENT_ROOT_PATH.
+ * @returns A promise with the content tree.
+ */
+export default async function discover() {
   const contentTree = await recursivelyDiscoverContent(CONTENT_ROOT_PATH);
-  const jsonTree = JSON.stringify(contentTree, null, 2);
-  console.log("Discover - Saving local json file...");
-  await saveFile(path.join(TOOLS_DIST_PATH, "discovered.json"), jsonTree);
-  console.log("Discover - Done!");
+  return contentTree;
 }
-
-main().catch((error) => {
-  console.log(error);
-  process.exit(1);
-});
