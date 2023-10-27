@@ -81,7 +81,7 @@ async function recursivelyDiscoverContent(
  * Discovers all content from CONTENT_ROOT_PATH.
  * @returns A promise with the content tree.
  */
-export default async function discover() {
+export default async function discover(): Promise<Category> {
   const contentTree = await recursivelyDiscoverContent(CONTENT_ROOT_PATH);
-  return contentTree;
+  return contentTree as Category;
 }
