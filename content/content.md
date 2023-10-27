@@ -17,6 +17,8 @@ Ou então, se preferir, veja alguns canteiros especiais que estou cultivando no 
 
 Aqui vão as últimas sementes que plantei:
 
+- ["Counting Stars" de "One Republic"](./piano/counting-stars-de-one-republic/content.md)
+
 - [Depois dos trinta](./piano/depois-dos-trinta/content.md)
 
 - [Até onde vamos?](./reflexoes-da-vida/ate-onde-vamos/content.md)
