@@ -1,14 +1,14 @@
 import { PathLike, existsSync, mkdirSync } from "fs";
 import { readFile, readdir, writeFile } from "fs/promises";
 import path, { extname } from "path";
-import { IMAGE_EXTENSIONS } from "../../../constants";
+import { CONTENT_ROOT_FOLDER_NAME, IMAGE_EXTENSIONS } from "../../../constants";
 
 /**
  * Gets the content root path.
  * @returns The content root path.
  */
 export function getContentsRootPath() {
-  return path.join(__dirname, "../../../../content");
+  return path.join(__dirname, "../../../../", CONTENT_ROOT_FOLDER_NAME);
 }
 
 /**

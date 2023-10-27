@@ -4,6 +4,7 @@ import path from "path";
 import {
   CONTENT_MARKDOWN_FILENAME,
   CONTENT_META_FILENAME,
+  CONTENT_ROOT_FOLDER_NAME,
 } from "../../../constants";
 
 /**
@@ -103,16 +104,44 @@ async function extractMarkdownContent(
   return raw;
 }
 
+/**
+ * Extracts the content name ("title") from a markdown file.
+ * @param raw The raw markdown content.
+ * @returns The content name.
+ */
+function getNameFromMarkdownFile(raw: string): string {
+  const markdownTitle = raw.split("\n")[0];
+  const title = markdownTitle.replace("#", "").trim();
+  return title;
+}
+
+/**
+ * Extracts the content slug from a content folder.
+ * @param currentPath The path of the content folder.
+ * @returns The content slug.
+ */
+function getSlugFromContentFolder(currentPath: string): string {
+  const lastSentence = currentPath.split("/").pop();
+  if (!lastSentence) {
+    throw new Error(`getSlugFromContentFolder | Invalid path ${currentPath}`);
+  }
+  if (lastSentence === CONTENT_ROOT_FOLDER_NAME) {
+    return "";
+  }
+  return lastSentence;
+}
+
 export async function extractPropertiesFromMarkdownFile(
   currentPath: string
 ): Promise<Pick<Content, "raw" | "name" | "slug">> {
   const markdownRaw = await extractMarkdownContent(currentPath);
-  console.log(markdownRaw);
+  const name = getNameFromMarkdownFile(markdownRaw);
+  const slug = getSlugFromContentFolder(currentPath);
 
   return {
     raw: markdownRaw,
-    name: "TODO",
-    slug: "TODO",
+    name,
+    slug,
   };
 }
 
