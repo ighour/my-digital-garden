@@ -8,15 +8,20 @@ Depois de algumas experiências por aí, algumas leituras por aqui, vivendo algu
 
 Descubra mais [sobre o meu jardim digital](./sobre-o-meu-jardim-digital/content.md) e como tudo começou.
 
+Ou então, se preferir, veja alguns canteiros especiais que estou cultivando no momento:
+- Meu novo hobbie, aprendendo a tocar [piano](./piano/content.md) e me divertindo muito!
+
 ---
 
 ### Últimas Sementes Plantadas
 
 Aqui vão as últimas sementes que plantei:
 
-- [Até onde vamos?](./2023-10-25-ate-onde-vamos/content.md)
+- [Depois dos trinta](./piano/depois-dos-trinta/content.md)
 
-- [A biblioteca viva](./2023-10-25-a-biblioteca-viva/content.md)
+- [Até onde vamos?](./reflexoes-da-vida/ate-onde-vamos/content.md)
+
+- [A biblioteca viva](./reflexoes-da-vida/a-biblioteca-viva/content.md)
 
 - [Como estou enfrentando meu monstro hoje? (parte 2)](./reflexoes-da-vida/como-estou-enfrentando-meu-monstro-hoje-parte-2/content.md)
 
