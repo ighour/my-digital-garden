@@ -2,7 +2,7 @@ import path from "path";
 import { getContentsRootPath, listDirectories } from "./utils/files";
 import {
   extractImages,
-  extractMarkdownContent,
+  extractPropertiesFromMarkdownFile,
   extractPropertiesFromMetaFile,
 } from "./utils/parse";
 import { Category, ContentType, Post } from "../../types";
@@ -24,8 +24,8 @@ async function recursivelyDiscoverContent(
   currentPath: string,
   parentPath: string | null = null
 ): Promise<Post | Category> {
-  const [markdownContent, metaProperties, imagesNames] = await Promise.all([
-    extractMarkdownContent(currentPath),
+  const [markdownProperties, metaProperties, imagesNames] = await Promise.all([
+    extractPropertiesFromMarkdownFile(currentPath),
     extractPropertiesFromMetaFile(currentPath),
     extractImages(currentPath),
   ]);
@@ -42,7 +42,7 @@ async function recursivelyDiscoverContent(
       );
     }
     const post = mapToPostContent(
-      markdownContent,
+      markdownProperties,
       metaProperties,
       currentPath,
       images,
@@ -65,7 +65,7 @@ async function recursivelyDiscoverContent(
   );
 
   const category = mapToCategoryContent(
-    markdownContent,
+    markdownProperties,
     metaProperties,
     currentPath,
     images,

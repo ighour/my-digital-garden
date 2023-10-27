@@ -1,5 +1,5 @@
 import { getRawFileContent, listImages } from "./files";
-import { Content, ContentType, Language, LocalImage } from "../../../types";
+import { Content, ContentType, Language } from "../../../types";
 import path from "path";
 import {
   CONTENT_MARKDOWN_FILENAME,
@@ -95,12 +95,25 @@ export async function extractPropertiesFromMetaFile(
  * @param currentPath The path of the markdown file.
  * @returns A promise with the markdown content.
  */
-export async function extractMarkdownContent(
+async function extractMarkdownContent(
   currentPath: string
 ): Promise<Content["raw"]> {
   const markdownFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
   const raw = getRawFileContent(markdownFilePath);
   return raw;
+}
+
+export async function extractPropertiesFromMarkdownFile(
+  currentPath: string
+): Promise<Pick<Content, "raw" | "name" | "slug">> {
+  const markdownRaw = await extractMarkdownContent(currentPath);
+  console.log(markdownRaw);
+
+  return {
+    raw: markdownRaw,
+    name: "TODO",
+    slug: "TODO",
+  };
 }
 
 /**

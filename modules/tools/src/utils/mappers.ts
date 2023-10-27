@@ -13,7 +13,7 @@ const CONTENT_ROOT_PATH = getContentsRootPath();
 
 /**
  * Maps to a typed post content.
- * @param rawContent markdown content of post.
+ * @param markdownProperties markdown properties of post.
  * @param metaProperties meta properties of post.
  * @param currentPath relative path of post folder from content root path.
  * @param images list of images of post.
@@ -21,7 +21,7 @@ const CONTENT_ROOT_PATH = getContentsRootPath();
  * @returns A typed post content.
  */
 export function mapToPostContent(
-  rawContent: string,
+  markdownProperties: Pick<Content, "raw" | "name" | "slug">,
   metaProperties: Pick<Content, "created_at" | "language">,
   currentPath: string,
   images: LocalImage[],
@@ -29,12 +29,12 @@ export function mapToPostContent(
 ): Post {
   const markdownFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
   const post: Post = {
-    raw: rawContent,
-    name: "TODO",
+    raw: markdownProperties.raw,
+    name: markdownProperties.name,
     created_at: metaProperties.created_at,
     type: ContentType.POST,
     language: metaProperties.language,
-    slug: "TODO",
+    slug: markdownProperties.slug,
     path: path.relative(CONTENT_ROOT_PATH, markdownFilePath),
     images,
     categoryPath: path.relative(CONTENT_ROOT_PATH, parentPath),
@@ -44,7 +44,7 @@ export function mapToPostContent(
 
 /**
  * Maps to a typed category content.
- * @param rawContent markdown content of category.
+ * @param markdownProperties markdown properties of category.
  * @param metaProperties meta properties of category.
  * @param currentPath relative path of category from content root path.
  * @param images list of images of category.
@@ -54,7 +54,7 @@ export function mapToPostContent(
  * @returns A typed category content.
  */
 export function mapToCategoryContent(
-  rawContent: string,
+  markdownProperties: Pick<Content, "raw" | "name" | "slug">,
   metaProperties: Pick<Content, "created_at" | "language">,
   currentPath: string,
   images: LocalImage[],
@@ -64,12 +64,12 @@ export function mapToCategoryContent(
 ): Category {
   const markdownFilePath = path.join(currentPath, CONTENT_MARKDOWN_FILENAME);
   const category: Category = {
-    raw: rawContent,
-    name: "TODO",
+    raw: markdownProperties.raw,
+    name: markdownProperties.name,
     created_at: metaProperties.created_at,
     type: ContentType.CATEGORY,
     language: metaProperties.language,
-    slug: "TODO",
+    slug: markdownProperties.slug,
     path: path.relative(CONTENT_ROOT_PATH, markdownFilePath),
     images,
     subcategories,
@@ -87,9 +87,12 @@ export function mapToCategoryContent(
  * @param currentPath current path of image.
  * @returns A typed local image.
  */
-export function mapToLocalImage(imageName: string, currentPath: string): LocalImage {
+export function mapToLocalImage(
+  imageName: string,
+  currentPath: string
+): LocalImage {
   return {
     name: imageName,
     path: path.relative(CONTENT_ROOT_PATH, path.join(currentPath, imageName)),
-  }
+  };
 }
