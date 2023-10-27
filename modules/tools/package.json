@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "parse-content": "ts-node src/parse-content.ts"
+    "discover": "ts-node src/discover.ts"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
