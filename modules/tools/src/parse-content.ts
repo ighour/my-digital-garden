@@ -2,7 +2,7 @@ import { PathLike, read } from "fs";
 import { readdir } from "fs/promises";
 import path, { extname } from "path";
 
-const CONTENT_ROOT_PATH = path.join(__dirname, "../../content");
+const CONTENT_ROOT_PATH = path.join(__dirname, "../../../content");
 const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".svg"];
 
 async function listDirectories(path: PathLike) {
