@@ -1,10 +1,9 @@
 {
   "scripts": {
-    "tsc:build": "tsc",
-    "discover": "ts-node src/tools/discover.ts",
-    "ssg": "ts-node src/tools/ssg.ts",
+    "build": "ts-node src/index.ts",
+    "build:debug": "ts-node src/index.ts --debug",
     "serve": "http-server output/website -p 9999",
-    "website": "npm run ssg && npm run serve"
+    "dev": "npm run build:debug && npm run serve"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",

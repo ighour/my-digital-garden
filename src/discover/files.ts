@@ -1,7 +1,7 @@
-import { PathLike, existsSync, mkdirSync } from "fs";
-import { readFile, readdir, writeFile } from "fs/promises";
-import path, { extname } from "path";
+import { PathLike } from "fs";
+import { readFile, readdir } from "fs/promises";
 import { IMAGE_EXTENSIONS } from "../constants";
+import { extname } from "path";
 
 /**
  * List all directories names from a path.

@@ -1,9 +1,7 @@
 import path from "path";
 import { Category, Content, ContentType, LocalImage, Post } from "../types";
 import { CONTENT_MARKDOWN_FILENAME } from "../constants";
-import { getDataPath } from "../utils";
-
-const DATA_PATH = getDataPath();
+import config from "../config";
 
 /**
  * Maps to a typed post content.
@@ -29,9 +27,9 @@ export function mapToPostContent(
     type: ContentType.POST,
     language: metaProperties.language,
     slug: markdownProperties.slug,
-    path: path.relative(DATA_PATH, markdownFilePath),
+    path: path.relative(config.paths.data, markdownFilePath),
     images,
-    categoryPath: path.relative(DATA_PATH, parentPath),
+    categoryPath: path.relative(config.paths.data, parentPath),
   };
   return post;
 }
@@ -64,12 +62,12 @@ export function mapToCategoryContent(
     type: ContentType.CATEGORY,
     language: metaProperties.language,
     slug: markdownProperties.slug,
-    path: path.relative(DATA_PATH, markdownFilePath),
+    path: path.relative(config.paths.data, markdownFilePath),
     images,
     subcategories,
     posts,
     parentCategoryPath: parentPath
-      ? path.relative(DATA_PATH, parentPath)
+      ? path.relative(config.paths.data, parentPath)
       : null,
   };
   return category;
@@ -87,6 +85,6 @@ export function mapToLocalImage(
 ): LocalImage {
   return {
     name: imageName,
-    path: path.relative(DATA_PATH, path.join(currentPath, imageName)),
+    path: path.relative(config.paths.data, path.join(currentPath, imageName)),
   };
 }

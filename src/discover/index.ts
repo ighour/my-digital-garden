@@ -11,9 +11,8 @@ import {
   mapToLocalImage,
   mapToPostContent,
 } from "./mappers";
-import { getDataPath } from "../utils";
-
-const DATA_PATH = getDataPath();
+import { saveFile } from "../utils";
+import config from "../config";
 
 /**
  * Recursively discovers all content from a path.
@@ -49,6 +48,7 @@ async function recursivelyDiscoverContent(
       images,
       parentPath
     );
+    console.log(`Discover - ${post.path} (${post.name})`)
     return post;
   }
 
@@ -74,15 +74,23 @@ async function recursivelyDiscoverContent(
     posts,
     parentPath
   );
+  console.log(`Discover - ${category.path} (${category.name})`)
 
   return category;
 }
 
 /**
- * Discovers all content from CONTENT_ROOT_PATH.
+ * Discovers all content from data.
  * @returns A promise with the content tree.
  */
 export default async function discover(): Promise<Category> {
-  const contentTree = await recursivelyDiscoverContent(DATA_PATH);
+  console.log("Discover - Start...");
+  const contentTree = await recursivelyDiscoverContent(config.paths.data);
+  if (config.debug === true) {
+    const jsonTree = JSON.stringify(contentTree, null, 2);
+    console.log("Discover - Saving local json file in output folder...");
+    await saveFile(path.join(config.paths.output, "data.json"), jsonTree);
+  }
+  console.log("Discover - Done!");
   return contentTree as Category;
 }

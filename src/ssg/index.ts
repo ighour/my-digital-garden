@@ -1,5 +1,4 @@
 import { Category, ContentType, Post, WebsiteTree } from "../types";
-import discover from "../discover";
 import { getHTML } from "./template";
 
 /**
@@ -49,8 +48,7 @@ async function recursivelyCreateWebsiteTree(
 /**
  * Generates a simple static website from discovered content.
  */
-export default async function SSG(): Promise<WebsiteTree> {
-  const data = await discover();
+export default async function SSG(data: Category | Post): Promise<WebsiteTree> {
   const websiteTree = await recursivelyCreateWebsiteTree({}, data);
   return websiteTree;
 }

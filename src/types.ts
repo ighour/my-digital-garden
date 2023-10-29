@@ -113,6 +113,6 @@ export interface Post extends Content {
 
 /**
  * The website tree.
- * @note key is the full path from root and value is the HTML content.
+ * @note key is the full path from data root and value is the HTML content.
  */
 export interface WebsiteTree extends Record<string, string> {}
