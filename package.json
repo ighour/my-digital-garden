@@ -1,7 +1,8 @@
 {
   "scripts": {
     "tsc:build": "tsc",
-    "discover": "ts-node src/tools/discover.ts"
+    "discover": "ts-node src/tools/discover.ts",
+    "ssg": "ts-node src/tools/ssg.ts"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",

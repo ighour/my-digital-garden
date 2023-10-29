@@ -11,3 +11,12 @@ Or imported in other modules with:
 ```typescript
 import discover from "src/discover";
 ```
+
+# SSG
+
+A very simple HTML static site generator from discovered content.
+
+It can be run standalone and create a static website in `output` folder with:
+```bash
+npm run ssg
+```

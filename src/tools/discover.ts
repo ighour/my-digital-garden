@@ -1,16 +1,17 @@
 import path from "path";
 import discover from "../discover";
-import { saveFile } from "../discover/files";
-import { getOutputPath } from "../utils";
+import { deletePath, getOutputPath, saveFile } from "../utils";
 
 const OUTPUT_PATH = getOutputPath();
+const OUTPUT_FILE_PATH = path.join(OUTPUT_PATH, "data.json");
 
 async function main() {
   console.log("Discover - Start...");
+  await deletePath(OUTPUT_FILE_PATH);
   const contentTree = await discover();
   const jsonTree = JSON.stringify(contentTree, null, 2);
-  console.log("Discover - Saving local json file in dist folder...");
-  await saveFile(path.join(OUTPUT_PATH, "data.json"), jsonTree);
+  console.log("Discover - Saving local json file in output folder...");
+  await saveFile(OUTPUT_FILE_PATH, jsonTree);
   console.log("Discover - Done!");
 }
 

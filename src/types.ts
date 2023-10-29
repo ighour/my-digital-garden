@@ -81,6 +81,9 @@ export interface Content {
   images: LocalImage[];
 }
 
+/**
+ * Category type.
+ */
 export interface Category extends Content {
   type: ContentType.CATEGORY;
   /**
@@ -97,6 +100,9 @@ export interface Category extends Content {
   parentCategoryPath: string | null;
 }
 
+/**
+ * Post type.
+ */
 export interface Post extends Content {
   type: ContentType.POST;
   /**
@@ -104,3 +110,9 @@ export interface Post extends Content {
    */
   categoryPath: string;
 }
+
+/**
+ * The website tree.
+ * @note key is the full path from root and value is the HTML content.
+ */
+export interface WebsiteTree extends Record<string, string> {}

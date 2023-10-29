@@ -36,15 +36,3 @@ export async function listImages(dirPath: PathLike) {
 export async function getRawFileContent(filePath: PathLike): Promise<string> {
   return readFile(filePath, "utf-8");
 }
-
-/**
- * Writes a file.
- * @param filePath path to write the file.
- * @param content content to write.
- */
-export async function saveFile(filePath: string, content: string) {
-  if (!existsSync(filePath)) {
-    mkdirSync(path.dirname(filePath), { recursive: true });
-  }
-  await writeFile(filePath, content, "utf-8");
-}

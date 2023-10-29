@@ -22,3 +22,13 @@ export const DATA_FOLDER_NAME = "data";
  * The output folder name.
  */
 export const OUTPUT_FOLDER_NAME = "output";
+
+/**
+ * The static website folder name.
+ */
+export const WEBSITE_FOLDER_NAME = "website";
+
+/**
+ * The HTML index filename.
+ */
+export const HTML_INDEX_FILENAME = "index.html";
