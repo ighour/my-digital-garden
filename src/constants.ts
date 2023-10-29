@@ -14,6 +14,11 @@ export const CONTENT_META_FILENAME = "meta.yaml";
 export const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".svg"];
 
 /**
- * The content root folder name.
+ * The data folder name.
  */
-export const CONTENT_ROOT_FOLDER_NAME = "content";
+export const DATA_FOLDER_NAME = "data";
+
+/**
+ * The output folder name.
+ */
+export const OUTPUT_FOLDER_NAME = "output";

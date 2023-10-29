@@ -1,23 +1,7 @@
 import { PathLike, existsSync, mkdirSync } from "fs";
 import { readFile, readdir, writeFile } from "fs/promises";
 import path, { extname } from "path";
-import { CONTENT_ROOT_FOLDER_NAME, IMAGE_EXTENSIONS } from "../../../constants";
-
-/**
- * Gets the content root path.
- * @returns The content root path.
- */
-export function getContentsRootPath() {
-  return path.join(__dirname, "../../../../", CONTENT_ROOT_FOLDER_NAME);
-}
-
-/**
- * Gets the tools dist path.
- * @returns The tools dist path.
- */
-export function getToolsDistPath() {
-  return path.join(__dirname, "../../dist");
-}
+import { IMAGE_EXTENSIONS } from "../constants";
 
 /**
  * List all directories names from a path.

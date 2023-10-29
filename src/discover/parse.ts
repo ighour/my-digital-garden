@@ -1,11 +1,11 @@
 import { getRawFileContent, listImages } from "./files";
-import { Content, ContentType, Language } from "../../../types";
+import { Content, ContentType, Language } from "../types";
 import path from "path";
 import {
   CONTENT_MARKDOWN_FILENAME,
   CONTENT_META_FILENAME,
-  CONTENT_ROOT_FOLDER_NAME,
-} from "../../../constants";
+  DATA_FOLDER_NAME,
+} from "../constants";
 
 /**
  * Get the content type as enum.
@@ -125,7 +125,7 @@ function getSlugFromContentFolder(currentPath: string): string {
   if (!lastSentence) {
     throw new Error(`getSlugFromContentFolder | Invalid path ${currentPath}`);
   }
-  if (lastSentence === CONTENT_ROOT_FOLDER_NAME) {
+  if (lastSentence === DATA_FOLDER_NAME) {
     return "";
   }
   return lastSentence;

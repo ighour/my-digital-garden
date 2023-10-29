@@ -1,18 +1,19 @@
 import path from "path";
-import { getContentsRootPath, listDirectories } from "./utils/files";
+import { listDirectories } from "./files";
 import {
   extractImages,
   extractPropertiesFromMarkdownFile,
   extractPropertiesFromMetaFile,
-} from "./utils/parse";
-import { Category, ContentType, Post } from "../../types";
+} from "./parse";
+import { Category, ContentType, Post } from "../types";
 import {
   mapToCategoryContent,
   mapToLocalImage,
   mapToPostContent,
-} from "./utils/mappers";
+} from "./mappers";
+import { getDataPath } from "../utils";
 
-const CONTENT_ROOT_PATH = getContentsRootPath();
+const DATA_PATH = getDataPath();
 
 /**
  * Recursively discovers all content from a path.
@@ -82,6 +83,6 @@ async function recursivelyDiscoverContent(
  * @returns A promise with the content tree.
  */
 export default async function discover(): Promise<Category> {
-  const contentTree = await recursivelyDiscoverContent(CONTENT_ROOT_PATH);
+  const contentTree = await recursivelyDiscoverContent(DATA_PATH);
   return contentTree as Category;
 }

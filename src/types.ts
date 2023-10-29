@@ -67,7 +67,8 @@ export interface Content {
   language: Language;
   /**
    * The slug of the content.
-   * @note from folder.
+   * @note from content folder name.
+   * @note used as ID, so it needs to be unique.
    */
   slug: string;
   /**
