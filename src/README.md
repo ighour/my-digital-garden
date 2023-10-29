@@ -20,3 +20,11 @@ It can be run standalone and create a static website in `output` folder with:
 ```bash
 npm run ssg
 ```
+
+# Website
+
+It will run `SGG` and serve it using [https://www.npmjs.com/package/http-server](http-server) on port 9999:
+
+```bash
+npm run website
+```
