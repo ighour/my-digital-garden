@@ -1,3 +1,5 @@
+import { PreviousPath } from "../types";
+
 /**
  * Creates a HTML page from a template.
  * @param params defines the attributes and body of the HTML page.
@@ -9,7 +11,15 @@ export function getHTML(params: {
     createdAt: string;
   };
   body: string;
+  previousPaths: PreviousPath[];
 }) {
+  const navigation = params.previousPaths
+    .map(
+      (previousPath) =>
+        `<a href="/${previousPath.path}">${previousPath.title}</a>`
+    )
+    .join(" > ");
+
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -20,7 +30,7 @@ export function getHTML(params: {
         </head>
         <body>
             <header>
-                <a href="/">Home</a>
+                ${navigation}
             </header>
             <div class="content">
                 <h1>${params.attributes.title}</h1>

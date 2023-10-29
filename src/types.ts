@@ -112,7 +112,15 @@ export interface Post extends Content {
 }
 
 /**
- * The website tree.
+ * The website map.
  * @note key is the full path from data root and value is the HTML content.
  */
-export interface WebsiteTree extends Record<string, string> {}
+export interface WebsiteMap extends Record<string, string> {}
+
+/**
+ * The previous path.
+ */
+export interface PreviousPath {
+  path: string;
+  title: string;
+}
