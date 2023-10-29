@@ -1,6 +1,6 @@
 # Website Generator
 
-This is a simple website generator that will read the content folder and generate a static website.
+This is a simple website generator that will read the content folder (`data`) and generate a static website.
 
 The static website can be built with:
 
@@ -39,3 +39,9 @@ Built website can be served using [https://www.npmjs.com/package/http-server](ht
 ```bash
 npm run dev
 ```
+
+## TODO
+
+- [ ] Remove http-server and use own local server
+- [ ] Handle markdown and show it as HTML
+- [ ] Website styles

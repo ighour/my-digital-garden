@@ -32,11 +32,15 @@ export function getHTML(params: {
             <header>
                 ${navigation}
             </header>
-            <div class="content">
+            <div>
                 <h1>${params.attributes.title}</h1>
                 <p>${params.attributes.createdAt}</p>
                 <hr />
                 <main>${params.body}</main>
+                <footer style="margin-top: 40px; text-align: center">
+                  <p style="margin: 0">Esse jardim é um projeto <i>open source</i>.</p>
+                  <p style="margin: 0">Confira o código fonte <a href="https://github.com/ighour/my-digital-garden" target="_blank">aqui</a>.</p>
+                </footer>
             </div>
         </body>
     </html>
