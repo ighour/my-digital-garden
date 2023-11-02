@@ -13,9 +13,10 @@ import {
 } from "./mappers";
 import { saveFile } from "../utils";
 import config from "../config";
+import { validateContentTree } from "./validate";
 
 /**
- * Recursively discovers all content from a path.
+ * Recursively discovers all content from a path and creates a tree.
  * @param currentPath current path to discover.
  * @param parentPath parent path of current path.
  * @returns A promise with typed post or category.
@@ -91,6 +92,7 @@ export default async function discover(): Promise<Category> {
     console.log("Discover - Saving local json file in output folder...");
     await saveFile(path.join(config.paths.output, "data.json"), jsonTree);
   }
+  validateContentTree(contentTree);
   console.log("Discover - Done!");
   return contentTree as Category;
 }
