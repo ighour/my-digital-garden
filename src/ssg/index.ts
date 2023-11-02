@@ -22,10 +22,9 @@ async function recursivelyCreateWebsiteTree(
 ): Promise<WebsiteMap> {
   const HTML = getHTML({
     attributes: {
-      createdAt: page.created_at,
       title: page.name,
     },
-    body: JSON.stringify(page.raw, null, 2), // @TODO: Convert Markdown to HTML and handle links.
+    rawMarkdown: page.raw,
     previousPaths,
   });
 

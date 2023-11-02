@@ -32,6 +32,8 @@ It can be imported with:
 import SSG from "src/ssg";
 ```
 
+It uses [markdown-it](https://github.com/markdown-it/markdown-it) for markdown parsing to HTML.
+
 ## Local server
 
 Built website can be served using [https://www.npmjs.com/package/http-server](http-server) on port 9999:
@@ -43,5 +45,5 @@ npm run dev
 ## TODO
 
 - [ ] Remove http-server and use own local server
-- [ ] Handle markdown and show it as HTML
+- [x] Handle markdown and show it as HTML
 - [ ] Website styles
