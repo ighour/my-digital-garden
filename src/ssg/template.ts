@@ -12,7 +12,7 @@ export function getHTML(params: {
   attributes: {
     title: string;
   };
-  rawMarkdown: string;
+  markdown: string;
   previousPaths: PreviousPath[];
 }) {
   const navigation = params.previousPaths
@@ -22,7 +22,7 @@ export function getHTML(params: {
     )
     .join(" > ");
 
-  const body = md.render(params.rawMarkdown);
+  const body = md.render(params.markdown);
 
   return `
     <!DOCTYPE html>

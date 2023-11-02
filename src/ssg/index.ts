@@ -6,6 +6,7 @@ import {
   PreviousPath,
   WebsiteMap,
 } from "../types";
+import { prepareMarkdownForHTML } from "./mapper";
 import { getHTML } from "./template";
 
 /**
@@ -20,11 +21,13 @@ async function recursivelyCreateWebsiteTree(
   websiteMap: WebsiteMap = {},
   previousPaths: PreviousPath[] = []
 ): Promise<WebsiteMap> {
+  const preparedMarkdown = prepareMarkdownForHTML(page.raw);
+
   const HTML = getHTML({
     attributes: {
       title: page.name,
     },
-    rawMarkdown: page.raw,
+    markdown: preparedMarkdown,
     previousPaths,
   });
 
