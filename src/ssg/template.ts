@@ -1,7 +1,4 @@
-import MarkdownIt from "markdown-it";
 import { PreviousPath } from "../types";
-
-const md = new MarkdownIt();
 
 /**
  * Creates a HTML page from a template.
@@ -12,7 +9,7 @@ export function getHTML(params: {
   attributes: {
     title: string;
   };
-  markdown: string;
+  body: string;
   previousPaths: PreviousPath[];
 }) {
   const navigation = params.previousPaths
@@ -21,8 +18,6 @@ export function getHTML(params: {
         `<a href="/${previousPath.path}">${previousPath.title}</a>`
     )
     .join(" > ");
-
-  const body = md.render(params.markdown);
 
   return `
     <!DOCTYPE html>
@@ -37,7 +32,7 @@ export function getHTML(params: {
                 ${navigation}
             </header>
             <div>
-                <main>${body}</main>
+                <main>${params.body}</main>
                 <footer style="margin-top: 40px; text-align: center">
                   <p style="margin: 0">Esse jardim é um projeto <i>open source</i>.</p>
                   <p style="margin: 0">Confira o código fonte <a href="https://github.com/ighour/my-digital-garden" target="_blank">aqui</a>.</p>

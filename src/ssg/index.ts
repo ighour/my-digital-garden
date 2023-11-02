@@ -1,3 +1,4 @@
+import MarkdownIt from "markdown-it";
 import { CONTENT_MARKDOWN_FILENAME } from "../constants";
 import {
   Category,
@@ -6,8 +7,10 @@ import {
   PreviousPath,
   WebsiteMap,
 } from "../types";
-import { prepareMarkdownForHTML } from "./mapper";
+import { parseMarkdown, parseHTMLBody } from "./parse";
 import { getHTML } from "./template";
+
+const md = new MarkdownIt();
 
 /**
  * Recursively creates the website tree.
@@ -21,13 +24,15 @@ async function recursivelyCreateWebsiteTree(
   websiteMap: WebsiteMap = {},
   previousPaths: PreviousPath[] = []
 ): Promise<WebsiteMap> {
-  const preparedMarkdown = prepareMarkdownForHTML(page.raw);
+  const parsedMarkdown = parseMarkdown(page.raw);
+  const rawHTMLBody = md.render(parsedMarkdown);
+  const parsedHTMLBody = parseHTMLBody(rawHTMLBody);
 
   const HTML = getHTML({
     attributes: {
       title: page.name,
     },
-    markdown: preparedMarkdown,
+    body: parsedHTMLBody,
     previousPaths,
   });
 
