@@ -113,9 +113,16 @@ export interface Post extends Content {
 
 /**
  * The website map.
- * @note key is the full path from data root and value is the HTML content.
+ * @note key is the full path from data root and the value is the HTML content and local images paths.
  */
-export interface WebsiteMap extends Record<string, string> {}
+export interface WebsiteMap
+  extends Record<
+    string,
+    {
+      html: string;
+      localImagesPaths: string[];
+    }
+  > {}
 
 /**
  * The previous path.

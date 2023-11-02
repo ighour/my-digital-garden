@@ -31,7 +31,10 @@ async function recursivelyCreateWebsiteTree(
     previousPaths,
   });
 
-  websiteMap[page.path] = HTML;
+  websiteMap[page.path] = {
+    html: HTML,
+    localImagesPaths: page.images.map((image) => image.path),
+  };
 
   const pathsUntilHere: PreviousPath[] = [
     ...previousPaths,
