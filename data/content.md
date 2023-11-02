@@ -9,13 +9,18 @@ Depois de algumas experiências por aí, algumas leituras por aqui, vivendo algu
 Descubra mais [sobre o meu jardim digital](./sobre-o-meu-jardim-digital/content.md) e como tudo começou.
 
 Ou então, se preferir, veja alguns canteiros especiais que estou cultivando no momento:
+
 - Meu novo hobbie, aprendendo a tocar [piano](./piano/content.md) e me divertindo muito!
+
+- Outro (talvez) hobbie, brincando com [quadrinhos poéticos](./quadrinhos-poeticos/content.md).
 
 ---
 
 ### Últimas Sementes Plantadas
 
 Aqui vão as últimas sementes que plantei:
+
+- [Ciclos](./quadrinhos-poeticos/ciclos/content.md)
 
 - ["Counting Stars" de "One Republic"](./piano/counting-stars-de-one-republic/content.md)
 
