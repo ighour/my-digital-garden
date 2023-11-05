@@ -37,6 +37,16 @@ export interface LocalImage {
 }
 
 /**
+ * Content config which is used to configure the final result of content page.
+ */
+export interface ContentConfig {
+  /**
+   * Show the children list in the content page.
+   */
+  show_children_list: boolean;
+}
+
+/**
  * Shared interface for categories and posts.
  */
 export interface Content {
@@ -79,6 +89,10 @@ export interface Content {
    * The images of the content.
    */
   images: LocalImage[];
+  /**
+   * The config of the content.
+   */
+  config: ContentConfig;
 }
 
 /**

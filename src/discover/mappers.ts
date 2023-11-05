@@ -1,5 +1,12 @@
 import path from "path";
-import { Category, Content, ContentType, LocalImage, Post } from "../types";
+import {
+  Category,
+  Content,
+  ContentConfig,
+  ContentType,
+  LocalImage,
+  Post,
+} from "../types";
 import { CONTENT_MARKDOWN_FILENAME } from "../constants";
 import config from "../config";
 
@@ -14,7 +21,8 @@ import config from "../config";
  */
 export function mapToPostContent(
   markdownProperties: Pick<Content, "raw" | "name" | "slug">,
-  metaProperties: Pick<Content, "created_at" | "language">,
+  metaProperties: Pick<Content, "created_at" | "language"> &
+    Pick<ContentConfig, "show_children_list">,
   currentPath: string,
   images: LocalImage[],
   parentPath: string
@@ -30,6 +38,9 @@ export function mapToPostContent(
     path: path.relative(config.paths.data, markdownFilePath),
     images,
     categoryPath: path.relative(config.paths.data, parentPath),
+    config: {
+      show_children_list: metaProperties.show_children_list,
+    },
   };
   return post;
 }
@@ -47,7 +58,8 @@ export function mapToPostContent(
  */
 export function mapToCategoryContent(
   markdownProperties: Pick<Content, "raw" | "name" | "slug">,
-  metaProperties: Pick<Content, "created_at" | "language">,
+  metaProperties: Pick<Content, "created_at" | "language"> &
+    Pick<ContentConfig, "show_children_list">,
   currentPath: string,
   images: LocalImage[],
   subcategories: Category[],
@@ -69,6 +81,9 @@ export function mapToCategoryContent(
     parentCategoryPath: parentPath
       ? path.relative(config.paths.data, parentPath)
       : null,
+    config: {
+      show_children_list: metaProperties.show_children_list,
+    },
   };
   return category;
 }

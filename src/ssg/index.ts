@@ -8,7 +8,8 @@ import {
   WebsiteMap,
 } from "../types";
 import { parseMarkdown, parseHTMLBody } from "./parse";
-import { getHTML } from "./template";
+import { useHTMLTemplate } from "./html-templates";
+import { mutateMarkdownWithPlugins } from "./plugins";
 
 const md = new MarkdownIt();
 
@@ -24,11 +25,12 @@ async function recursivelyCreateWebsiteTree(
   websiteMap: WebsiteMap = {},
   previousPaths: PreviousPath[] = []
 ): Promise<WebsiteMap> {
-  const parsedMarkdown = parseMarkdown(page.raw);
+  const markdownWithPlugins = mutateMarkdownWithPlugins(page);
+  const parsedMarkdown = parseMarkdown(markdownWithPlugins);
   const rawHTMLBody = md.render(parsedMarkdown);
   const parsedHTMLBody = parseHTMLBody(rawHTMLBody);
 
-  const HTML = getHTML({
+  const HTML = useHTMLTemplate({
     attributes: {
       title: page.name,
     },

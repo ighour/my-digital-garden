@@ -1,5 +1,5 @@
 import { getRawFileContent, listImages } from "./files";
-import { Content, ContentType, Language } from "../types";
+import { Content, ContentConfig, ContentType, Language } from "../types";
 import path from "path";
 import {
   CONTENT_MARKDOWN_FILENAME,
@@ -78,7 +78,7 @@ async function parseYamlFile(
  */
 export async function extractPropertiesFromMetaFile(
   currentPath: string
-): Promise<Pick<Content, "created_at" | "type" | "language">> {
+): Promise<Pick<Content, "created_at" | "type" | "language"> & Pick<ContentConfig, "show_children_list">> {
   const contentMetaPath = path.join(currentPath, CONTENT_META_FILENAME);
   const parsedMeta = await parseYamlFile(contentMetaPath);
 
@@ -86,6 +86,7 @@ export async function extractPropertiesFromMetaFile(
     created_at: parsedMeta.created_at,
     type: getContentType(parsedMeta.type),
     language: getLanguage(parsedMeta.language),
+    show_children_list: parsedMeta.show_children_list === "true",
   };
 
   return properties;

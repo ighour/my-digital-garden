@@ -5,7 +5,7 @@ import { PreviousPath } from "../types";
  * @param params defines the attributes and body of the HTML page.
  * @returns a string representing a HTML page.
  */
-export function getHTML(params: {
+export function useHTMLTemplate(params: {
   attributes: {
     title: string;
   };
