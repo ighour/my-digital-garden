@@ -42,8 +42,14 @@ export interface LocalImage {
 export interface ContentConfig {
   /**
    * Show the children list in the content page.
+   * @note from meta file.
    */
   show_children_list: boolean;
+  /**
+   * Show the last updated children list in the content page.
+   * @note from meta file.
+   */
+  show_last_updated_children_list: number;
 }
 
 /**
@@ -65,6 +71,11 @@ export interface Content {
    * @note from meta file.
    */
   created_at: string;
+  /**
+   * The date of the content last update.
+   * @note from meta file.
+   */
+  last_updated_at: string;
   /**
    * The type of the content.
    * @note from meta file.

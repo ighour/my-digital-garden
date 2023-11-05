@@ -48,7 +48,7 @@ npm run dev
 - [x] Handle markdown and show it as HTML
 - [ ] Website styles
 - [x] Add meta `show_children_list:${boolean}` and automatically generate planted seeds section
-- [ ] Add meta `last_updated_at` and `show_last_update_children_list:${number}` and automatically generate last cultivated seeds section
+- [x] Add meta `last_updated_at` and `show_last_updated_children_list:${number}` and automatically generate last cultivated seeds section
 - [ ] Add meta `is_pinned` and `show_pinned_children_list:${boolean}` and automatically generate important seeds section
 - [ ] Move meta to frontmatter and remove markdown refence in root docs
 - [ ] Rename `content.md` to `index.md`

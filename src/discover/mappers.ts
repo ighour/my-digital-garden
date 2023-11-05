@@ -21,8 +21,11 @@ import config from "../config";
  */
 export function mapToPostContent(
   markdownProperties: Pick<Content, "raw" | "name" | "slug">,
-  metaProperties: Pick<Content, "created_at" | "language"> &
-    Pick<ContentConfig, "show_children_list">,
+  metaProperties: Pick<Content, "created_at" | "last_updated_at" | "language"> &
+    Pick<
+      ContentConfig,
+      "show_children_list" | "show_last_updated_children_list"
+    >,
   currentPath: string,
   images: LocalImage[],
   parentPath: string
@@ -32,6 +35,7 @@ export function mapToPostContent(
     raw: markdownProperties.raw,
     name: markdownProperties.name,
     created_at: metaProperties.created_at,
+    last_updated_at: metaProperties.last_updated_at,
     type: ContentType.POST,
     language: metaProperties.language,
     slug: markdownProperties.slug,
@@ -40,6 +44,8 @@ export function mapToPostContent(
     categoryPath: path.relative(config.paths.data, parentPath),
     config: {
       show_children_list: metaProperties.show_children_list,
+      show_last_updated_children_list:
+        metaProperties.show_last_updated_children_list,
     },
   };
   return post;
@@ -58,8 +64,11 @@ export function mapToPostContent(
  */
 export function mapToCategoryContent(
   markdownProperties: Pick<Content, "raw" | "name" | "slug">,
-  metaProperties: Pick<Content, "created_at" | "language"> &
-    Pick<ContentConfig, "show_children_list">,
+  metaProperties: Pick<Content, "created_at" | "last_updated_at" | "language"> &
+    Pick<
+      ContentConfig,
+      "show_children_list" | "show_last_updated_children_list"
+    >,
   currentPath: string,
   images: LocalImage[],
   subcategories: Category[],
@@ -71,6 +80,7 @@ export function mapToCategoryContent(
     raw: markdownProperties.raw,
     name: markdownProperties.name,
     created_at: metaProperties.created_at,
+    last_updated_at: metaProperties.last_updated_at,
     type: ContentType.CATEGORY,
     language: metaProperties.language,
     slug: markdownProperties.slug,
@@ -83,6 +93,8 @@ export function mapToCategoryContent(
       : null,
     config: {
       show_children_list: metaProperties.show_children_list,
+      show_last_updated_children_list:
+        metaProperties.show_last_updated_children_list,
     },
   };
   return category;

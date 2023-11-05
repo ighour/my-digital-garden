@@ -78,15 +78,25 @@ async function parseYamlFile(
  */
 export async function extractPropertiesFromMetaFile(
   currentPath: string
-): Promise<Pick<Content, "created_at" | "type" | "language"> & Pick<ContentConfig, "show_children_list">> {
+): Promise<
+  Pick<Content, "created_at" | "last_updated_at" | "type" | "language"> &
+    Pick<
+      ContentConfig,
+      "show_children_list" | "show_last_updated_children_list"
+    >
+> {
   const contentMetaPath = path.join(currentPath, CONTENT_META_FILENAME);
   const parsedMeta = await parseYamlFile(contentMetaPath);
 
   const properties = {
     created_at: parsedMeta.created_at,
+    last_updated_at: parsedMeta.last_updated_at ?? parsedMeta.created_at,
     type: getContentType(parsedMeta.type),
     language: getLanguage(parsedMeta.language),
     show_children_list: parsedMeta.show_children_list === "true",
+    show_last_updated_children_list: +(
+      parsedMeta.show_last_updated_children_list ?? 0
+    ),
   };
 
   return properties;
