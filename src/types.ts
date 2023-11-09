@@ -47,6 +47,7 @@ export interface ContentConfig {
   show_children_list: boolean;
   /**
    * Show the last updated children list in the content page.
+   * Number of children to show.
    * @note from meta file.
    */
   show_last_updated_children_list: number;
@@ -112,17 +113,35 @@ export interface Content {
 export interface Category extends Content {
   type: ContentType.CATEGORY;
   /**
-   * List of subcategories.
-   */
-  subcategories: Category[];
-  /**
-   * List of posts.
-   */
-  posts: Post[];
-  /**
    * The category path of the parent.
    */
   parentCategoryPath: string | null;
+  /**
+   * All children of the category.
+   * @note including helper functions.
+   */
+  children: {
+    /**
+     * List of all subcategories.
+     */
+    subcategories: Category[];
+    /**
+     * List of all posts.
+     */
+    posts: Post[];
+    /**
+     * Get all children sorted by.
+     * @param params params to sort.
+     * @returns all children sorted by.
+     */
+    getAllSortedBy: (params: {
+      sortBy: 'name' | 'lastUpdatedAt';
+      orderBy: 'asc' | 'desc';
+      includeNestedChildren: boolean;
+      /** Limit the number of children. Defaults to all. */
+      limit?: number;
+    }) => (Post | Category)[];
+  }
 }
 
 /**

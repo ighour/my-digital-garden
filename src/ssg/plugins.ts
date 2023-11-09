@@ -15,38 +15,28 @@ function addNestedChildrenLastUpdatedListAtEndOfMarkdown(
   markdown: string,
   content: Post | Category
 ) {
-  const children =
-    content.type === ContentType.CATEGORY
-      ? [...content.subcategories, ...content.posts]
-      : [];
   const childrenToShowCount = content.config.show_last_updated_children_list;
-  if (children.length > 0 && childrenToShowCount > 0) {
-    const allChildren = children.reduce((acc, child) => {
-      const nestedChildren =
-        child.type === ContentType.CATEGORY
-          ? [...child.subcategories, ...child.posts]
-          : [];
-      return [...acc, ...nestedChildren];
-    }, children);
 
-    const childrenSortedByLastUpdatedAt = [...allChildren].sort(
-      (a, b) =>
-        new Date(b.last_updated_at).getTime() -
-        new Date(a.last_updated_at).getTime()
-    );
-
-    const lastChildren = childrenSortedByLastUpdatedAt.slice(
-      0,
-      childrenToShowCount
-    );
-
-    const childrenList = useNestedChildrenLastUpdatedListTemplate(
-      content,
-      lastChildren
-    );
-    return `${markdown}\n\n${childrenList}`;
+  if (content.type !== ContentType.CATEGORY) {
+    return markdown;
   }
-  return markdown;
+  if (childrenToShowCount === 0) {
+    return markdown;
+  }
+
+  const lastUpdatedNestedChildren = content.children.getAllSortedBy({
+    sortBy: "lastUpdatedAt",
+    orderBy: "desc",
+    includeNestedChildren: true,
+    limit: childrenToShowCount,
+  });
+
+  const markdownPlugin = useNestedChildrenLastUpdatedListTemplate(
+    content,
+    lastUpdatedNestedChildren
+  );
+
+  return `${markdown}\n\n${markdownPlugin}`;
 }
 
 /**
@@ -61,18 +51,22 @@ function addChildrenListAtEndOfMarkdown(
   markdown: string,
   content: Post | Category
 ) {
-  const children =
-    content.type === ContentType.CATEGORY
-      ? [...content.subcategories, ...content.posts]
-      : [];
-  if (children.length > 0 && content.config.show_children_list) {
-    const childrenSortedByName = [...children].sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-    const childrenList = useChildrenListTemplate(content, childrenSortedByName);
-    return `${markdown}\n\n${childrenList}`;
+  if (content.type !== ContentType.CATEGORY) {
+    return markdown;
   }
-  return markdown;
+  if (!content.config.show_children_list) {
+    return markdown;
+  }
+
+  const children = content.children.getAllSortedBy({
+    sortBy: "name",
+    orderBy: "asc",
+    includeNestedChildren: false,
+  });
+
+  const markdownPlugin = useChildrenListTemplate(content, children);
+
+  return `${markdown}\n\n${markdownPlugin}`;
 }
 
 /**

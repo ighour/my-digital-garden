@@ -53,18 +53,18 @@ async function recursivelyCreateWebsiteTree(
 
   if (page.type === ContentType.CATEGORY) {
     // First, recursively create categories pages.
-    if (page.subcategories.length > 0) {
+    if (page.children.subcategories.length > 0) {
       await Promise.all(
-        page.subcategories.map((subcategory) =>
+        page.children.subcategories.map((subcategory) =>
           recursivelyCreateWebsiteTree(subcategory, websiteMap, pathsUntilHere)
         )
       );
     }
 
     // Then recursively create posts pages.
-    if (page.posts.length > 0) {
+    if (page.children.posts.length > 0) {
       await Promise.all(
-        page.posts.map((post) =>
+        page.children.posts.map((post) =>
           recursivelyCreateWebsiteTree(post, websiteMap, pathsUntilHere)
         )
       );

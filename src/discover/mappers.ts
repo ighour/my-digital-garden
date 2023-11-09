@@ -9,6 +9,7 @@ import {
 } from "../types";
 import { CONTENT_MARKDOWN_FILENAME } from "../constants";
 import config from "../config";
+import { getAllChildrenSortedBy } from "./utils";
 
 /**
  * Maps to a typed post content.
@@ -86,15 +87,23 @@ export function mapToCategoryContent(
     slug: markdownProperties.slug,
     path: path.relative(config.paths.data, markdownFilePath),
     images,
-    subcategories,
-    posts,
-    parentCategoryPath: parentPath
-      ? path.relative(config.paths.data, parentPath)
-      : null,
     config: {
       show_children_list: metaProperties.show_children_list,
       show_last_updated_children_list:
         metaProperties.show_last_updated_children_list,
+    },
+    parentCategoryPath: parentPath
+      ? path.relative(config.paths.data, parentPath)
+      : null,
+    children: {
+      subcategories,
+      posts,
+      getAllSortedBy: (params) =>
+        getAllChildrenSortedBy({
+          subcategories,
+          posts,
+          ...params,
+        }),
     },
   };
   return category;
