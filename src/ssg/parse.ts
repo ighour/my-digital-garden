@@ -42,12 +42,22 @@ function parseHTMLBodyLinks(body: string): string {
 }
 
 /**
+ * Parses the HTML images.
+ * @param body the HTML body to parse.
+ * @returns the HTML body with images.
+ */
+function parseHTMLImages(body: string): string {
+  return body.replace(/<p><img/g, '<p class="_image"><img');
+}
+
+/**
  * Parses the HTML body.
  * @param body the HTML body to parse.
  * @returns the HTML body.
  */
 export function parseHTMLBody(body: string): string {
   const bodyWithLinks = parseHTMLBodyLinks(body);
+  const bodyWithImages = parseHTMLImages(bodyWithLinks);
 
-  return bodyWithLinks;
+  return bodyWithImages;
 }

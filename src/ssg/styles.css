@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl my-5;
+  }
+  h2 {
+    @apply text-2xl my-4;
+  }
+  h3 {
+    @apply text-xl my-3;
+  }
+  hr {
+    @apply my-5 mx-1;
+  }
+  p {
+    @apply my-3;
+  }
+  blockquote {
+    @apply p-4 my-4 bg-gray-50 border-l-4 border-gray-300;
+  }
+  blockquote > p {
+    @apply italic font-medium leading-relaxed text-gray-900 my-0;
+  }
+  a {
+    @apply underline underline-offset-4;
+  }
+  p._image {
+    @apply flex justify-center items-center;
+  }
+  img {
+    @apply max-w-xl;
+  }
+  ul {
+    @apply ml-7 list-disc;
+  }
+  footer {
+    @apply mt-10 text-center;
+  }
+  footer > p {
+    @apply my-0;
+  }
+}
