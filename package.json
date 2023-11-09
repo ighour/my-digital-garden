@@ -9,11 +9,9 @@
     "@tsconfig/node20": "^20.1.2",
     "@types/markdown-it": "^13.0.5",
     "@types/node": "^20.8.9",
+    "http-server": "^14.1.1",
     "markdown-it": "^13.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "http-server": "^14.1.1"
   }
 }
