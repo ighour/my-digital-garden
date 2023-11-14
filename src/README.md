@@ -44,11 +44,10 @@ npm run dev
 
 ## TODO
 
-- [ ] Remove http-server and use own local server
 - [x] Handle markdown and show it as HTML
-- [ ] Website styles
+- [x] Website styles
 - [x] Add meta `show_children_list:${boolean}` and automatically generate planted seeds section
 - [x] Add meta `last_updated_at` and `show_last_updated_children_list:${number}` and automatically generate last cultivated seeds section
 - [ ] Add meta `is_pinned` and `show_pinned_children_list:${boolean}` and automatically generate important seeds section
-- [ ] Move meta to frontmatter and remove markdown refence in root docs
+- [ ] Move meta to frontmatter and remove markdown reference in root docs
 - [ ] Rename `content.md` to `index.md`
