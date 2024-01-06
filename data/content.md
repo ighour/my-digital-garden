@@ -15,3 +15,5 @@ Ou então, se preferir, veja alguns canteiros especiais que estou cultivando no 
 - Meu novo hobbie, aprendendo a tocar [piano](./piano/content.md) e me divertindo muito!
 
 - Outro (talvez) hobbie, brincando com [quadrinhos poéticos](./quadrinhos-poeticos/content.md).
+
+- Algumas [poesias insurgentes](./poesias-insurgentes/content.md).
