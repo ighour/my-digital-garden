@@ -12,6 +12,8 @@ Ahh, também quero compartilhar com você algumas leituras, inspirações e outr
 
 Ou então, se preferir, veja alguns canteiros especiais que estou cultivando no momento:
 
+- [O que realmente importa?](./reflexoes-da-vida/o-que-realmente-importa/content.md)
+
 - Meu novo hobbie, aprendendo a tocar [piano](./piano/content.md) e me divertindo muito!
 
 - Outro (talvez) hobbie, brincando com [quadrinhos poéticos](./quadrinhos-poeticos/content.md).
