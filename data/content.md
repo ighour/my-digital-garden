@@ -12,7 +12,7 @@ Ahh, também quero compartilhar com você algumas leituras, inspirações e outr
 
 Ou então, se preferir, veja alguns canteiros especiais que estou cultivando no momento:
 
-- [Jeito Ansioso](./jeito-ansioso/content.md), uma série textual.
+- [(Série) Jeito Ansioso](./jeito-ansioso/content.md), uma série textual.
 
 - [O que realmente importa?](./reflexoes-da-vida/o-que-realmente-importa/content.md)
 
