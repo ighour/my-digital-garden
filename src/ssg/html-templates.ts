@@ -28,12 +28,12 @@ export function useHTMLTemplate(params: {
             <title>${params.attributes.title}</title>
             <link href="/styles.css" rel="stylesheet">
         </head>
-        <body class="h-full w-full py-8 px-16">
-            <header>
-                ${navigation}
-            </header>
-            <div>
-                <main class="text-lg">${params.body}</main>
+        <body class="h-screen w-screen p-8 flex flex-col items-center">
+            <div class="flex-1 max-w-screen-md flex flex-col">
+                <header>
+                    ${navigation}
+                </header>
+                <main class="text-lg flex-1">${params.body}</main>
                 <footer>
                   <p>Esse jardim é um projeto <i>open source</i>.</p>
                   <p>Confira o código fonte <a href="https://github.com/ighour/my-digital-garden" target="_blank">aqui</a>.</p>
