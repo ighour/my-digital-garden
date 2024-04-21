@@ -33,7 +33,7 @@ export function useHTMLTemplate(params: {
                 ${navigation}
             </header>
             <div>
-                <main>${params.body}</main>
+                <main class="text-lg">${params.body}</main>
                 <footer>
                   <p>Esse jardim é um projeto <i>open source</i>.</p>
                   <p>Confira o código fonte <a href="https://github.com/ighour/my-digital-garden" target="_blank">aqui</a>.</p>
