@@ -41,13 +41,3 @@ Built website can be served using [https://www.npmjs.com/package/http-server](ht
 ```bash
 npm run dev
 ```
-
-## TODO
-
-- [x] Handle markdown and show it as HTML
-- [x] Website styles
-- [x] Add meta `show_children_list:${boolean}` and automatically generate planted seeds section
-- [x] Add meta `last_updated_at` and `show_last_updated_children_list:${number}` and automatically generate last cultivated seeds section
-- [ ] Add meta `is_pinned` and `show_pinned_children_list:${boolean}` and automatically generate important seeds section
-- [ ] Move meta to frontmatter and remove markdown reference in root docs
-- [ ] Rename `content.md` to `index.md`

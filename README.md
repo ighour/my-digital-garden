@@ -2,7 +2,7 @@
 
 You can simply view the garden from my markdown files [here](./data/content.md), or for a website experience instead, visit [here](https://jardim-digital.ighour.me).
 
-Currently, the garden is only cultivated with Portuguese seeds, but I intend to plant some English seeds soon.
+Currently, the garden is only cultivated with Portuguese seeds.
 
 You can check more details about how this garden is digitally created [here](./src/README.md).
 
